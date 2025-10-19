@@ -1,0 +1,83 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "modules-left": ["custom/menu", "custom/separator", "cpu", "custom/memory", "mpris", "custom/cava"],
+  "modules-center": ["clock"],
+  "modules-right": ["hyprland/language", "custom/separator", "custom/wifi", "wireplumber", "custom/battery", "tray", "custom/logout"],
+  "exclusive": true,
+
+  "clock": {
+},
+  "custom/battery": {
+    "exec": "/home/limforge/.config/waybar/battery.sh",
+    "interval": 30,
+    "return-type": "json"
+  },
+
+  "wireplumber": {
+    "format": "{icon}{volume}% ",
+    "format-muted": " Muted ",
+    "format-icons": [" "," "," "],
+    "scroll-step": 5,
+    "max-volume": 100
+},
+    "custom/menu": {
+    "format": " 󰣇 ",
+    "on-click": "rofi -show drun"
+  },
+
+  "custom/logout": {
+    "format": " 󰍃 ",
+    "on-click": "wlogout"
+  },
+  "cpu": {
+    "interval": 2,
+    "format": " {usage}%  ",
+    "on-click": "kitty -e htop"
+  },
+  "custom/memory": {
+   "exec": "~/.config/waybar/memory.sh",
+   "interval": 2,
+   "return-type": "json"
+ },
+  "custom/separator": {
+	  "format": " "
+},
+"hyprland/language": {
+    "keyboard-name": "at-translated-set-2-keyboard", // Replace with your keyboard name from `hyprctl devices`
+    "format": " {short} ",
+    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next" // Replace with your keyboard name
+},
+
+"custom/wifi": {
+    "format": "󰖩  ",
+    "on-click": "kitty -e nmtui"
+},
+"tray": {
+    "spacing": 10
+},
+"mpris": {
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} {dynamic}",
+    "dynamic-order": ["artist", "title"],
+    "max-length": 50,
+    "player-icons": {
+        "default": "  󰎆",
+        "cmus": "  ",
+        "mpv": "  🎵",
+        "vlc": "  🎬",
+        "spotify": "  "
+      },
+      "status-icons": {
+        "paused": "  ⏸"
+      },
+      "on-click": "playerctl play-pause",
+      "on-click-right": "playerctl stop",
+      "smooth-scrolling-threshold": 10,
+      "on-scroll-down": "playerctl previous"  
+},
+/* "custom/cava": {
+   "exec": "~/.config/waybar/cava.sh"
+} */
+}

@@ -1,0 +1,32 @@
+window#waybar {
+    background: #2e3440; /* rgba(0, 0, 0, 0); #11111b; */
+    font-family: "Jetbrains Mono";
+    font-size: 16px;
+    color: #e5e9f0;
+}
+
+#clock {
+    padding: 0 20px;
+}
+
+/* Батарея */
+#custom-battery {
+    color: #bf616a;
+}
+#wireplumber {
+    font-family: "Jetbrains Mono";
+}
+
+/* Панель трей */
+#tray { 
+padding: 0 20px; 
+}
+
+#menu {
+font-size: 99999999999px;
+color: #89b4fa;
+}
+
+#custom-cava {
+	margin-left: 250px;
+}
